@@ -1,0 +1,36 @@
+[project]
+name = "finalproject-Allahverdiyev-M26-555"
+version = "0.1.0"
+description = "Currency wallet simulation CLI"
+readme = "README.md"
+authors = [
+    { name = "ilgar228", email = "ilgarallah@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "prettytable>=3.0.0",
+]
+
+[project.scripts]
+valutatrade = "valutatrade_hub.cli.interface:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "valutatrade_hub"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = ["venv", ".venv", "dist", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
